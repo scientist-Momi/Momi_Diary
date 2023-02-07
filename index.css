@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f7f7f7;
+    padding: 0 10px;
+    flex-direction: column;
+}
+
+.logo img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.wrapper {
+    background: #fff;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+/* Login & Signup Form CSS Start */
+
+#todoForm{
+    display: none;
+}
+
+#todoList{
+    display: none;
+}
+
+#updateNote{
+    display: none;
+}
+
+.form {
+    padding: 25px 30px;
+}
+
+.form header,  .form .para{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.form .para{
+    font-size: 20px;
+}
+
+.form .para1{
+    font-size: 15px;
+}
+
+.form .small_date{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: green;
+    margin-bottom: -1rem;
+}
+
+.form form, .form .note_lists, .form .todo_lists {
+    margin: 20px 0;
+}
+
+
+.form .note_lists ,
+.form .todo_lists{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+}
+
+.form .todo_lists .todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .55rem;
+}
+
+.form .todo_lists .todo .todo_para{
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.form .note_lists .note, .form .todo_lists .todo{
+    padding: .3rem .7rem;
+    border-radius: 5px;
+    background: #eeeeee;
+}
+
+.form .todo_lists .todo .todo_date{
+    background: rgb(255, 77, 0);
+    padding: .25rem;
+    width: fit-content;
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.form .todo_lists .todo .todo_btn span{
+    background: green;
+    color: #fff;
+    padding: .3rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.form .note_lists .note{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: space-between;
+}
+
+.form .note_lists .note .todo_btn span{
+    color: #fff;
+    background: rgb(255, 77, 0);
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+.form .note_lists .note p{
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+.form .err_info{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+.form button{
+    border: none;
+}
+
+.form .dash{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: .5rem;
+}
+.form .dash1{
+    justify-content: space-between;
+}
+
+
+.form .dash span{
+    font-size: 2rem;
+    font-weight: 500;
+    color: green;
+    padding-bottom: .4rem;
+    padding-right: .6rem;
+    border-right: 1px solid #cacaca;
+    cursor: pointer;
+}
+
+.menu_list{
+    position: absolute;
+    margin-top: 4rem;
+    background: #fff;
+    padding: .9rem .8rem;
+    padding-left: 2rem;
+    z-index: 2;
+    animation: showProfile 700ms ease forwards;
+    display: none;
+}
+
+
+@keyframes showProfile {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.form .closeBtn{
+    display: none;
+}
+
+.menu_list .profile{
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    background: #cacaca;
+    padding: .25rem;
+    margin-bottom: .2rem;
+}
+
+.menu_list .profile .p_img{
+    width: 1.5rem;
+    height: 1.5rem;
+    background: red;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.menu_list .profile .p_img img{
+    width: 100%;
+}
+
+.menu_list ul{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .3rem;
+}
+
+.menu_list ul a:nth-child(3){
+    margin-top: .6rem;
+}
+
+.menu_list ul a:hover li{
+    background: rgb(0, 128, 0);
+    color: #fff;
+}
+
+.menu_list ul a li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    font-size: .8rem;
+    color: green;
+    padding: .2rem;
+}
+
+.menu_list ul a li span{
+    font-size: 1.4rem;
+}
+
+
+.form .note_lists .note small{
+    font-size: .8rem;
+}
+
+.form .note_lists .note .note_body{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.form .note_lists a{
+    text-decoration: none;
+    color: #333;
+}
+
+.active{
+    background: #cacaca;
+}
+
+.form .actions{
+    display: grid;
+    border-radius: 5px;
+    background: #f7f7f7;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
+
+.form .actions .note{
+    padding: .3rem .9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+}
+
+.form .actions .note span{
+    color: green;
+}
+
+
+
+.form form .error-text, .form form .success-text {
+    color: #721c24;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.form form .success-text{
+    color: rgb(43, 110, 43);
+    background: rgb(212, 250, 212);
+    border: 1px solid rgb(203, 251, 203);
+}
+
+.form form .name-details {
+    display: flex;
+}
+
+.form .name-details .field:first-child {
+    margin-right: 10px;
+}
+
+.form .name-details .field:last-child {
+    margin-left: 10px;
+}
+
+.form form .field {
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    position: relative;
+}
+
+.form form .field label {
+    margin-bottom: 2px;
+}
+
+.form form .input input {
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form form .input textarea{
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form form .field input {
+    outline: none;
+}
+
+.form form .image input {
+    font-size: 17px;
+}
+
+.form form .button input {
+    height: 45px;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 13px;
+}
+
+.form form .field i {
+    position: absolute;
+    right: 15px;
+    top: 70%;
+    color: #ccc;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.form form .field i.active::before {
+    color: #333;
+    content: "\f070";
+}
+
+.form .link {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.form .link a {
+    color: #333;
+}
+
+.form .link a:hover {
+    text-decoration: underline;
+}
